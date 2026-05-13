@@ -15,4 +15,5 @@ stages:
               mavenPOMFile: 'pom.xml'
               goals: "package"
               testResultsFiles: "**/surefire-reports/TEST-*.xml"
+
               
