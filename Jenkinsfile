@@ -8,6 +8,11 @@ pipeline {
         booleanParam (name: "SKIP_BUILD", defaultValue: true, description: "Skip maven build stage")
     }
 
+    environment {
+        image_name = "myapp_1.0"
+        tag_name = "1.0"
+    }
+
     stages {
         stage ("Git - Checkout") {
             steps {
@@ -64,6 +69,14 @@ pipeline {
                 }
             }
         }
+
+        stage ("Docker image") {
+            steps {
+                sh "docker image build -t ${image_name}:${tag_name} ."
+            }
+        }
+
+        
 
     }
 
