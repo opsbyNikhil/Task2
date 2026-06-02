@@ -35,7 +35,7 @@ pipeline{
         stage ("Test"){
             steps {
                 withCredentials([string(credentialsId: "SONAR_ID", variable: "SONAR_TOKEN")]){
-                withSonarQubeEnv("SONAR_ID"){
+                withSonarQubeEnv("SONAR"){
                     sh """mvn sonar:sonar \
                     -Dsonar.projectkey=opsbyNikhil_spring-petclinic \
                     -Dsonar.organization=opsbynikhil \
