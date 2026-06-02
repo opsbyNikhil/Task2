@@ -21,5 +21,21 @@ pipeline{
             }
         }
 
+        stage('Debug') {
+            steps {
+                sh '''
+                echo "Hostname:"
+                hostname
+
+                echo "User:"
+                whoami
+
+                echo "Maven:"
+                which mvn
+                mvn --version
+                '''
+            }
+}
+
     }
 }
