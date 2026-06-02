@@ -34,7 +34,7 @@ pipeline{
 
         stage ("Test"){
             steps {
-                withCredentails([string(credentailsId: "SONAR_ID", variable: "SONAR_TOKEN")]){
+                withCredentials([string(credentialsId: "SONAR_ID", variable: "SONAR_TOKEN")]){
                 withSonarQubeEnv("SONAR"){
                     sh """mvn sonar:sonar \
                     -Dsonar.projectkey=opsbyNikhil_spring-petclinic \
