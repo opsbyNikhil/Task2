@@ -15,27 +15,11 @@ pipeline{
             }
         }
 
-        // stage ("Build"){
-        //     steps {
-        //         sh "mvn package"
-        //     }
-        // }
-
-        stage('Debug') {
+        stage ("Build"){
             steps {
-                sh '''
-                echo "Hostname:"
-                hostname
-
-                echo "User:"
-                whoami
-
-                echo "Maven:"
-                which mvn
-                mvn --version
-                '''
+                sh "mvn package"
             }
-}
+        }
 
     }
 }
