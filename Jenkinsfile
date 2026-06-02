@@ -3,7 +3,7 @@ pipeline{
         label "My-Java-App"
     }
     triggers {
-    pollSCM ("* * * * *")
+        pollSCM ("* * * * *")
 
     }
     
