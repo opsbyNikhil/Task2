@@ -10,7 +10,7 @@ pipeline{
     stages {
         stage ("Git-Chckout") {
             steps {
-                git url: "https://github.com/opsbyNikhil/Task2.git"
+                git url: "https://github.com/opsbyNikhil/Task2.git",
                   branch: "main"
             }
         }
