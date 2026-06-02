@@ -32,5 +32,20 @@ pipeline{
             }
         }
 
+        stage ("Test"){
+            steps {
+                withCredentails([string(credentailsId: "SONAR_ID", variable: "SONAR_TOKEN")]){
+                withSonarQubeEnv("SONAR"){
+                    sh """mvn sonar:sonar \
+                    -Dsonar.projectkey=opsbyNikhil_spring-petclinic \
+                    -Dsonar.organization=opsbynikhil \
+                    -Dsonar.host.url=https://sonarcloud.io/ \
+                    -Dsonar.login=${SONAR_TOKEN}                
+                    """
+                }
+                }
+            }
+        }
+
     }
 }
