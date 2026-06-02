@@ -15,11 +15,11 @@ pipeline{
             }
         }
 
-        stage ("Build"){
-            steps {
-                sh "mvn package"
-            }
-        }
+        // stage ("Build"){
+        //     steps {
+        //         sh "mvn package"
+        //     }
+        // }
 
         stage('Debug') {
             steps {
